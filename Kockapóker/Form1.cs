@@ -13,20 +13,45 @@ namespace Kockapóker
 {
     public partial class Form1 : Form
     {
-        Leosztas l = new Leosztas();
+        List<PictureBox> jatekosKepek = new List<PictureBox>();
+        List<PictureBox> gepKepek = new List<PictureBox>();
+
+
+        Jatekos j;
+        Jatekos g;
         public Form1()
         {
             InitializeComponent();
-            pbElsoJatekos1.Image = Properties.Resources.kek1;
-            pbElsoJatekos2.Image = Properties.Resources.kek2;
-            pbElsoJatekos3.Image = Properties.Resources.kek3;
-            pbElsoJatekos4.Image = Properties.Resources.kek4;
-            pbElsoJatekos5.Image = Properties.Resources.kek5;
+            jatekosKepek.Add(pbElsoJatekos1);
+            jatekosKepek.Add(pbElsoJatekos2);
+            jatekosKepek.Add(pbElsoJatekos3);
+            jatekosKepek.Add(pbElsoJatekos4);
+            jatekosKepek.Add(pbElsoJatekos5);
+
+            gepKepek.Add(pbMasodikJatekos1);
+            gepKepek.Add(pbMasodikJatekos2);
+            gepKepek.Add(pbMasodikJatekos3);
+            gepKepek.Add(pbMasodikJatekos4);
+            gepKepek.Add(pbMasodikJatekos5);
+
+            j = new Jatekos("Szerencsés Pista", jatekosKepek);
+            j.kepekBeallitasa();
+            g = new Jatekos("Gép", gepKepek);
+            g.kepekBeallitasa();
+
         }
 
         private void btnKilepes_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(l.ToString());
+            //MessageBox.Show(j.Kockak.MilyenErtek(0).ToString());
+            //MessageBox.Show(j.Kockak.MilyenErtek(1).ToString());
+            //MessageBox.Show(j.Kockak.MilyenErtek(2).ToString());
+            //MessageBox.Show(j.Kockak.MilyenErtek(3).ToString());
+            //MessageBox.Show(j.Kockak.MilyenErtek(4).ToString());
+            //MessageBox.Show(j.ToString());
+            //j.ujLeosztas();
+            //MessageBox.Show(j.ToString());
+            
             Application.Exit();
         }
     }
