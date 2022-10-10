@@ -22,23 +22,52 @@ namespace Kockapóker
         public Form1()
         {
             InitializeComponent();
+            PictureBoxokBeallitasa();
+            JatekosokBeallitasa();
+
+            VezerlokBeallitasa();
+
+            Kiertekeles();
+
+        }
+
+        private void Kiertekeles()
+        {
+            lblJatekosErtek.Text = j.LeosztasErtek;
+        }
+        private void VezerlokBeallitasa()
+        {
+            lblGepErtek.Text = "";
+            lblJatekosErtek.Text = "";
+        }
+
+        private void JatekosokBeallitasa()
+        {
+            List<int> kockak = new List<int>() { 2, 2, 2, 3, 3};
+            j = new Jatekos("Szerencsés Pista", jatekosKepek);
+
+            j.LeosztasBeallitasa(kockak);
+
+            g = new Jatekos("Gép", gepKepek);
+
+            j.kepekBeallitasa();
+            g.kepekBeallitasa();
+        }
+
+        private void PictureBoxokBeallitasa()
+        {
             jatekosKepek.Add(pbElsoJatekos1);
             jatekosKepek.Add(pbElsoJatekos2);
             jatekosKepek.Add(pbElsoJatekos3);
             jatekosKepek.Add(pbElsoJatekos4);
             jatekosKepek.Add(pbElsoJatekos5);
+           
 
             gepKepek.Add(pbMasodikJatekos1);
             gepKepek.Add(pbMasodikJatekos2);
             gepKepek.Add(pbMasodikJatekos3);
             gepKepek.Add(pbMasodikJatekos4);
             gepKepek.Add(pbMasodikJatekos5);
-
-            j = new Jatekos("Szerencsés Pista", jatekosKepek);
-            j.kepekBeallitasa();
-            g = new Jatekos("Gép", gepKepek);
-            g.kepekBeallitasa();
-
         }
 
         private void btnKilepes_Click(object sender, EventArgs e)

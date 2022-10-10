@@ -22,3 +22,6 @@
 ## Grafika
 - képek, ...
 - teljes képernyő
+
+## A dobás értékének megállapítása
+- Leosztas osztály bővítése

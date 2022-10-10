@@ -13,7 +13,7 @@ namespace Kockapóker.sajatOsztalyok
 
         private string nev;
 
-        public string Nev
+        public string Nev   
         {
             get { return nev; }
             set { nev = value; }
@@ -29,6 +29,12 @@ namespace Kockapóker.sajatOsztalyok
         public override string ToString()
         {
             return $"{nev} - {leosztas.ToString()}";
+
+        }
+
+        public void LeosztasBeallitasa(List<int> kockak)
+        {
+            leosztas.LeosztasBeallitasa(kockak);
         }
 
         public Jatekos(string nev, List<PictureBox> kockaKepek)
@@ -64,10 +70,16 @@ namespace Kockapóker.sajatOsztalyok
                     case 5:
                         k.Image = Properties.Resources.kek5;
                         break;
+                    case 6:
+                        k.Image = Properties.Resources.kek6;
+                        break;
                     
                 }
                 //k.Image = kepValaszt();
             }
         }
+        public string LeosztasErtek { get {
+                return leosztas.LeosztasErteke();
+            } }
     }
 }

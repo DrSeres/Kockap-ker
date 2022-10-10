@@ -11,7 +11,7 @@ namespace Kockapóker.sajatOsztalyok
     {
         public Gep(string nev, List<PictureBox> kockaKepek) : base(nev, kockaKepek)
         {
-
+                
 
         }
         public void kepekBeallitasa()
@@ -25,16 +25,19 @@ namespace Kockapóker.sajatOsztalyok
                         k.Image = Properties.Resources.zold1;
                         break;
                     case 2:
-                        k.Image = Properties.Resources.kek2;
+                        k.Image = Properties.Resources.zold2;
                         break;
                     case 3:
-                        k.Image = Properties.Resources.kek3;
+                        k.Image = Properties.Resources.zold3;
                         break;
                     case 4:
-                        k.Image = Properties.Resources.kek4;
+                        k.Image = Properties.Resources.zold4;
                         break;
                     case 5:
-                        k.Image = Properties.Resources.kek5;
+                        k.Image = Properties.Resources.zold5;
+                        break;
+                    case 6:
+                        k.Image = Properties.Resources.zold6;
                         break;
 
                 }

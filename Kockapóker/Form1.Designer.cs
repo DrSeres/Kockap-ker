@@ -31,29 +31,33 @@ namespace Kockapóker
         {
             this.btnKilepes = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbElsoJatekos1 = new System.Windows.Forms.PictureBox();
-            this.pbElsoJatekos2 = new System.Windows.Forms.PictureBox();
-            this.pbElsoJatekos3 = new System.Windows.Forms.PictureBox();
-            this.pbElsoJatekos4 = new System.Windows.Forms.PictureBox();
             this.pbElsoJatekos5 = new System.Windows.Forms.PictureBox();
+            this.pbElsoJatekos4 = new System.Windows.Forms.PictureBox();
+            this.pbElsoJatekos3 = new System.Windows.Forms.PictureBox();
+            this.pbElsoJatekos2 = new System.Windows.Forms.PictureBox();
+            this.pbElsoJatekos1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pbMasodikJatekos5 = new System.Windows.Forms.PictureBox();
             this.pbMasodikJatekos4 = new System.Windows.Forms.PictureBox();
             this.pbMasodikJatekos3 = new System.Windows.Forms.PictureBox();
             this.pbMasodikJatekos2 = new System.Windows.Forms.PictureBox();
             this.pbMasodikJatekos1 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblJatekosErtek = new System.Windows.Forms.Label();
+            this.lblGepErtek = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnKilepes
@@ -80,32 +84,14 @@ namespace Kockapóker
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Első játékos";
             // 
-            // pbElsoJatekos1
+            // pbElsoJatekos5
             // 
-            this.pbElsoJatekos1.Location = new System.Drawing.Point(6, 24);
-            this.pbElsoJatekos1.Name = "pbElsoJatekos1";
-            this.pbElsoJatekos1.Size = new System.Drawing.Size(70, 70);
-            this.pbElsoJatekos1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbElsoJatekos1.TabIndex = 0;
-            this.pbElsoJatekos1.TabStop = false;
-            // 
-            // pbElsoJatekos2
-            // 
-            this.pbElsoJatekos2.Location = new System.Drawing.Point(90, 24);
-            this.pbElsoJatekos2.Name = "pbElsoJatekos2";
-            this.pbElsoJatekos2.Size = new System.Drawing.Size(70, 70);
-            this.pbElsoJatekos2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbElsoJatekos2.TabIndex = 0;
-            this.pbElsoJatekos2.TabStop = false;
-            // 
-            // pbElsoJatekos3
-            // 
-            this.pbElsoJatekos3.Location = new System.Drawing.Point(176, 24);
-            this.pbElsoJatekos3.Name = "pbElsoJatekos3";
-            this.pbElsoJatekos3.Size = new System.Drawing.Size(70, 70);
-            this.pbElsoJatekos3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbElsoJatekos3.TabIndex = 0;
-            this.pbElsoJatekos3.TabStop = false;
+            this.pbElsoJatekos5.Location = new System.Drawing.Point(348, 24);
+            this.pbElsoJatekos5.Name = "pbElsoJatekos5";
+            this.pbElsoJatekos5.Size = new System.Drawing.Size(70, 70);
+            this.pbElsoJatekos5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbElsoJatekos5.TabIndex = 0;
+            this.pbElsoJatekos5.TabStop = false;
             // 
             // pbElsoJatekos4
             // 
@@ -116,14 +102,32 @@ namespace Kockapóker
             this.pbElsoJatekos4.TabIndex = 0;
             this.pbElsoJatekos4.TabStop = false;
             // 
-            // pbElsoJatekos5
+            // pbElsoJatekos3
             // 
-            this.pbElsoJatekos5.Location = new System.Drawing.Point(348, 24);
-            this.pbElsoJatekos5.Name = "pbElsoJatekos5";
-            this.pbElsoJatekos5.Size = new System.Drawing.Size(70, 70);
-            this.pbElsoJatekos5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbElsoJatekos5.TabIndex = 0;
-            this.pbElsoJatekos5.TabStop = false;
+            this.pbElsoJatekos3.Location = new System.Drawing.Point(176, 24);
+            this.pbElsoJatekos3.Name = "pbElsoJatekos3";
+            this.pbElsoJatekos3.Size = new System.Drawing.Size(70, 70);
+            this.pbElsoJatekos3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbElsoJatekos3.TabIndex = 0;
+            this.pbElsoJatekos3.TabStop = false;
+            // 
+            // pbElsoJatekos2
+            // 
+            this.pbElsoJatekos2.Location = new System.Drawing.Point(90, 24);
+            this.pbElsoJatekos2.Name = "pbElsoJatekos2";
+            this.pbElsoJatekos2.Size = new System.Drawing.Size(70, 70);
+            this.pbElsoJatekos2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbElsoJatekos2.TabIndex = 0;
+            this.pbElsoJatekos2.TabStop = false;
+            // 
+            // pbElsoJatekos1
+            // 
+            this.pbElsoJatekos1.Location = new System.Drawing.Point(6, 24);
+            this.pbElsoJatekos1.Name = "pbElsoJatekos1";
+            this.pbElsoJatekos1.Size = new System.Drawing.Size(70, 70);
+            this.pbElsoJatekos1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbElsoJatekos1.TabIndex = 0;
+            this.pbElsoJatekos1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -184,6 +188,35 @@ namespace Kockapóker
             this.pbMasodikJatekos1.TabIndex = 0;
             this.pbMasodikJatekos1.TabStop = false;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblGepErtek);
+            this.groupBox3.Controls.Add(this.lblJatekosErtek);
+            this.groupBox3.Location = new System.Drawing.Point(18, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(453, 317);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // lblJatekosErtek
+            // 
+            this.lblJatekosErtek.AutoSize = true;
+            this.lblJatekosErtek.Location = new System.Drawing.Point(30, 52);
+            this.lblJatekosErtek.Name = "lblJatekosErtek";
+            this.lblJatekosErtek.Size = new System.Drawing.Size(51, 20);
+            this.lblJatekosErtek.TabIndex = 0;
+            this.lblJatekosErtek.Text = "label1";
+            // 
+            // lblGepErtek
+            // 
+            this.lblGepErtek.AutoSize = true;
+            this.lblGepErtek.Location = new System.Drawing.Point(25, 122);
+            this.lblGepErtek.Name = "lblGepErtek";
+            this.lblGepErtek.Size = new System.Drawing.Size(51, 20);
+            this.lblGepErtek.TabIndex = 1;
+            this.lblGepErtek.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -192,6 +225,7 @@ namespace Kockapóker
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1086, 601);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnKilepes);
@@ -202,17 +236,19 @@ namespace Kockapóker
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kockapóker";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -232,6 +268,9 @@ namespace Kockapóker
         private System.Windows.Forms.PictureBox pbMasodikJatekos3;
         private System.Windows.Forms.PictureBox pbMasodikJatekos2;
         private System.Windows.Forms.PictureBox pbMasodikJatekos1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblGepErtek;
+        private System.Windows.Forms.Label lblJatekosErtek;
     }
 }
 
