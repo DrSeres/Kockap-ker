@@ -56,36 +56,121 @@ namespace Kockapóker.sajatOsztalyok
         {
             //kockak lista
 
+            //kockak.Sort();
+            //if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
+            //{
+            //    return $"{kockak[0]} Nagy Póker";
+            //}
+            //else if (kockak[0] == 1 && kockak[1] == 2 && kockak[2] == 3 && kockak[3] == 4 && kockak[4] == 5)
+            //{
+            //        return $"Kissor";
+            //}
+            //else if (kockak[0] == 2 && kockak[1] == 3 && kockak[2] == 4 && kockak[3] == 5 && kockak[4] == 6)
+            //{
+            //    return $"Nagysor";
+            //}
+            //else if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[2] == kockak[3])
+            //{
+            //    return $"{kockak[0]} Póker";
+            //}
+            //else if (kockak[1] == kockak[2] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
+            //{
+            //    return $"{kockak[1]} Póker";
+            //}
+            //else if (kockak[0] == kockak[1] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
+            //{
+            //    return $"{kockak[2]} - {kockak[0]} Full";
+            //}
+            //else if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[3] == kockak[4])
+            //{
+            //    return $"{kockak[0]} - {kockak[3]} Full";
+            //}
+
+
+
+            //Dictionary
+            // 5, 5, 5, 5, 5
+            //Key = , Value = 
+
+            //Nagypóker [5, 5]
+            //Kissor [1,1] [2,1] [3,1] [4,1] [5,1]
+            //Nagysor [2,1] [3,1] [4,1] [5,1] [6,1]
+            //Póker [3,4] [5,1]
+            //Full [3,2] [4,3]
+            //Drill [1,3] [2,1] [
+
             kockak.Sort();
-            if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
+            Dictionary<int, int> stat = Statisztika(kockak);
+            string eredmeny = "";
+
+            if (stat.Count == 1)
             {
-                return $"{kockak[0]} Nagy Póker";
+                eredmeny = $" {stat.First().Key} Nagypóker";
             }
-            else if (kockak[0] == 1 && kockak[1] == 2 && kockak[2] == 3 && kockak[3] == 4 && kockak[4] == 5)
+            else if (stat.Count == 5)
             {
-                    return $"Kissor";
+                eredmeny = KissorNagysorSemmi(stat);
             }
-            else if (kockak[0] == 2 && kockak[1] == 3 && kockak[2] == 4 && kockak[3] == 5 && kockak[4] == 6)
+            else if (stat.Count == 2)
             {
-                return $"Nagysor";
+                eredmeny = PokerFull(stat);
             }
-            else if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[2] == kockak[3])
+            else if (stat.Count == 3)
             {
-                return $"{kockak[0]} Póker";
+                eredmeny = Drill2Par(stat);
             }
-            else if (kockak[1] == kockak[2] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
+            else
+                eredmeny = $"Pár";
+            return eredmeny;
+        }
+
+        private static string Drill2Par(Dictionary<int, int> stat)
+        {
+            string eredmeny;
+            if (stat.ContainsValue(3))
+                eredmeny = $"Drill";
+            else
+                eredmeny = $"2 pár";
+            return eredmeny;
+        }
+
+        private static string PokerFull(Dictionary<int, int> stat)
+        {
+            string eredmeny;
+            if (stat.ContainsValue(4))
+                eredmeny = $" {stat.OrderByDescending(x => x.Value).First().Key} Póker";
+            else
+                eredmeny = $"{stat.OrderByDescending(x => x.Value).First().Key} - {stat.OrderBy(x => x.Value).First().Key} Full";
+            return eredmeny;
+        }
+
+        private static string KissorNagysorSemmi(Dictionary<int, int> stat)
+        {
+            string eredmeny;
+            if (!stat.ContainsKey(1))
+                eredmeny = $"Nagysor";
+            else if (!stat.ContainsKey(6))
+                eredmeny = $"Kissor";
+            else
+                eredmeny = "Semmi";
+            return eredmeny;
+        }
+
+        private Dictionary<int, int> Statisztika(List<int> kockak)
+        {
+            Dictionary<int, int> tmp = new Dictionary<int, int>();
+            foreach (var k in kockak)
             {
-                return $"{kockak[1]} Póker";
+                if (tmp.ContainsKey(k))
+                {
+                    tmp[k]++;
+                }
+                else
+                {
+                    tmp.Add(k, 1);
+                }
             }
-            else if (kockak[0] == kockak[1] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
-            {
-                return $"{kockak[2]} - {kockak[0]} Full";
-            }
-            else if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[3] == kockak[4])
-            {
-                return $"{kockak[0]} - {kockak[3]} Full";
-            }
-            return "Semmi";
+            return tmp;
         }
     }
 }
