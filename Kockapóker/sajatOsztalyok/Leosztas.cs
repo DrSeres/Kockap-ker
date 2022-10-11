@@ -54,50 +54,6 @@ namespace Kockapóker.sajatOsztalyok
 
         public string LeosztasErteke()
         {
-            //kockak lista
-
-            //kockak.Sort();
-            //if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
-            //{
-            //    return $"{kockak[0]} Nagy Póker";
-            //}
-            //else if (kockak[0] == 1 && kockak[1] == 2 && kockak[2] == 3 && kockak[3] == 4 && kockak[4] == 5)
-            //{
-            //        return $"Kissor";
-            //}
-            //else if (kockak[0] == 2 && kockak[1] == 3 && kockak[2] == 4 && kockak[3] == 5 && kockak[4] == 6)
-            //{
-            //    return $"Nagysor";
-            //}
-            //else if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[2] == kockak[3])
-            //{
-            //    return $"{kockak[0]} Póker";
-            //}
-            //else if (kockak[1] == kockak[2] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
-            //{
-            //    return $"{kockak[1]} Póker";
-            //}
-            //else if (kockak[0] == kockak[1] && kockak[2] == kockak[3] && kockak[3] == kockak[4])
-            //{
-            //    return $"{kockak[2]} - {kockak[0]} Full";
-            //}
-            //else if (kockak[0] == kockak[1] && kockak[1] == kockak[2] && kockak[3] == kockak[4])
-            //{
-            //    return $"{kockak[0]} - {kockak[3]} Full";
-            //}
-
-
-
-            //Dictionary
-            // 5, 5, 5, 5, 5
-            //Key = , Value = 
-
-            //Nagypóker [5, 5]
-            //Kissor [1,1] [2,1] [3,1] [4,1] [5,1]
-            //Nagysor [2,1] [3,1] [4,1] [5,1] [6,1]
-            //Póker [3,4] [5,1]
-            //Full [3,2] [4,3]
-            //Drill [1,3] [2,1] [
 
             kockak.Sort();
             Dictionary<int, int> stat = Statisztika(kockak);
@@ -120,7 +76,7 @@ namespace Kockapóker.sajatOsztalyok
                 eredmeny = Drill2Par(stat);
             }
             else
-                eredmeny = $"Pár";
+                eredmeny = $" {stat.OrderByDescending(x => x.Value).First().Key} Pár";
             return eredmeny;
         }
 
@@ -128,9 +84,19 @@ namespace Kockapóker.sajatOsztalyok
         {
             string eredmeny;
             if (stat.ContainsValue(3))
-                eredmeny = $"Drill";
+                eredmeny = $" {stat.OrderByDescending(x => x.Value).First().Key} Drill";
             else
-                eredmeny = $"2 pár";
+            {
+                List<int> parok = new List<int>();
+                foreach (var item in stat)
+                {
+                    if (item.Value == 2)
+                    {
+                        parok.Add(item.Key);
+                    }
+                }
+                eredmeny = $"{parok.Max()} - {parok.Min()} pár";
+            }
             return eredmeny;
         }
 
@@ -148,11 +114,18 @@ namespace Kockapóker.sajatOsztalyok
         {
             string eredmeny;
             if (!stat.ContainsKey(1))
+            {
                 eredmeny = $"Nagysor";
+
+            }
             else if (!stat.ContainsKey(6))
+            {
                 eredmeny = $"Kissor";
+            }
             else
+            {
                 eredmeny = "Semmi";
+            }
             return eredmeny;
         }
 
@@ -172,5 +145,7 @@ namespace Kockapóker.sajatOsztalyok
             }
             return tmp;
         }
+
+        public int Pont { get; set; }
     }
 }

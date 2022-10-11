@@ -81,5 +81,7 @@ namespace Kockapóker.sajatOsztalyok
         public string LeosztasErtek { get {
                 return leosztas.LeosztasErteke();
             } }
+
+
     }
 }

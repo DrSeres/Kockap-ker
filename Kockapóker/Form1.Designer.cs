@@ -43,8 +43,8 @@ namespace Kockapóker
             this.pbMasodikJatekos2 = new System.Windows.Forms.PictureBox();
             this.pbMasodikJatekos1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblJatekosErtek = new System.Windows.Forms.Label();
             this.lblGepErtek = new System.Windows.Forms.Label();
+            this.lblJatekosErtek = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos4)).BeginInit();
@@ -197,16 +197,7 @@ namespace Kockapóker
             this.groupBox3.Size = new System.Drawing.Size(453, 317);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // lblJatekosErtek
-            // 
-            this.lblJatekosErtek.AutoSize = true;
-            this.lblJatekosErtek.Location = new System.Drawing.Point(30, 52);
-            this.lblJatekosErtek.Name = "lblJatekosErtek";
-            this.lblJatekosErtek.Size = new System.Drawing.Size(51, 20);
-            this.lblJatekosErtek.TabIndex = 0;
-            this.lblJatekosErtek.Text = "label1";
+            this.groupBox3.Text = "Eredmények";
             // 
             // lblGepErtek
             // 
@@ -216,6 +207,15 @@ namespace Kockapóker
             this.lblGepErtek.Size = new System.Drawing.Size(51, 20);
             this.lblGepErtek.TabIndex = 1;
             this.lblGepErtek.Text = "label1";
+            // 
+            // lblJatekosErtek
+            // 
+            this.lblJatekosErtek.AutoSize = true;
+            this.lblJatekosErtek.Location = new System.Drawing.Point(30, 52);
+            this.lblJatekosErtek.Name = "lblJatekosErtek";
+            this.lblJatekosErtek.Size = new System.Drawing.Size(51, 20);
+            this.lblJatekosErtek.TabIndex = 0;
+            this.lblJatekosErtek.Text = "label1";
             // 
             // Form1
             // 

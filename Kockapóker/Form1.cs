@@ -18,7 +18,7 @@ namespace Kockapóker
 
 
         Jatekos j;
-        Jatekos g;
+        Gep g;
         public Form1()
         {
             InitializeComponent();
@@ -33,7 +33,8 @@ namespace Kockapóker
 
         private void Kiertekeles()
         {
-            lblJatekosErtek.Text = j.LeosztasErtek;
+            lblJatekosErtek.Text = $"Első játékos: {j.LeosztasErtek}";
+            lblGepErtek.Text = $"Második játékos: {g.LeosztasErtek}";
         }
         private void VezerlokBeallitasa()
         {
@@ -43,12 +44,12 @@ namespace Kockapóker
 
         private void JatekosokBeallitasa()
         {
-            List<int> kockak = new List<int>() { 2, 2, 4, 4, 4};
+            //List<int> kockak = new List<int>() { 2, 2, 4, 4, 4};
             j = new Jatekos("Szerencsés Pista", jatekosKepek);
 
-            j.LeosztasBeallitasa(kockak);
+            //j.LeosztasBeallitasa(kockak);
 
-            g = new Jatekos("Gép", gepKepek);
+            g = new Gep("Gép", gepKepek);
 
             j.kepekBeallitasa();
             g.kepekBeallitasa();
