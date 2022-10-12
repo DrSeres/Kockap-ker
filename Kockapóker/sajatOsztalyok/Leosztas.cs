@@ -15,10 +15,12 @@ namespace Kockapóker.sajatOsztalyok
             kockak = Keveres();
         }
 
+        public int Pont { get; set; }
         public Leosztas()
         {
             kockak = Keveres();
         }
+
 
         private List<int> Keveres()
         {
@@ -61,7 +63,10 @@ namespace Kockapóker.sajatOsztalyok
 
             if (stat.Count == 1)
             {
-                eredmeny = $" {stat.First().Key} Nagypóker";
+                int poker = stat.First().Key;
+                eredmeny = $" {poker} Nagypóker";
+                Pont = 8000 + poker;
+
             }
             else if (stat.Count == 5)
             {
@@ -76,15 +81,23 @@ namespace Kockapóker.sajatOsztalyok
                 eredmeny = Drill2Par(stat);
             }
             else
-                eredmeny = $" {stat.OrderByDescending(x => x.Value).First().Key} Pár";
+            {
+                int par = stat.OrderByDescending(x => x.Value).First().Key;
+                eredmeny = $" {par} Pár";
+                Pont = par;
+            }
             return eredmeny;
         }
 
-        private static string Drill2Par(Dictionary<int, int> stat)
+        private string Drill2Par(Dictionary<int, int> stat)
         {
             string eredmeny;
+            int drill = stat.OrderByDescending(x => x.Value).First().Key;
             if (stat.ContainsValue(3))
-                eredmeny = $" {stat.OrderByDescending(x => x.Value).First().Key} Drill";
+            { 
+                eredmeny = $" {drill} Drill";
+                Pont = 100 * drill;
+            }
             else
             {
                 List<int> parok = new List<int>();
@@ -95,36 +108,49 @@ namespace Kockapóker.sajatOsztalyok
                         parok.Add(item.Key);
                     }
                 }
-                eredmeny = $"{parok.Max()} - {parok.Min()} pár";
+                int max = parok.Max();
+                int min = parok.Min();
+                eredmeny = $"{max} - {min} pár";
+                Pont = 10 * max + min;
             }
             return eredmeny;
         }
 
-        private static string PokerFull(Dictionary<int, int> stat)
+        private string PokerFull(Dictionary<int, int> stat)
         {
             string eredmeny;
+            int elsoTag = stat.OrderByDescending(x => x.Value).First().Key;
+            int masodikTag = stat.OrderBy(x => x.Value).First().Key;
             if (stat.ContainsValue(4))
-                eredmeny = $" {stat.OrderByDescending(x => x.Value).First().Key} Póker";
+            { 
+                eredmeny = $" {elsoTag} Póker";
+                Pont = 7000 + elsoTag;
+            }
             else
-                eredmeny = $"{stat.OrderByDescending(x => x.Value).First().Key} - {stat.OrderBy(x => x.Value).First().Key} Full";
+            { 
+                eredmeny = $"{elsoTag} - {masodikTag} Full";
+                Pont = 1000 * elsoTag + masodikTag;
+            }
             return eredmeny;
         }
 
-        private static string KissorNagysorSemmi(Dictionary<int, int> stat)
+        private string KissorNagysorSemmi(Dictionary<int, int> stat)
         {
             string eredmeny;
             if (!stat.ContainsKey(1))
             {
                 eredmeny = $"Nagysor";
-
+                Pont = 7020;
             }
             else if (!stat.ContainsKey(6))
             {
                 eredmeny = $"Kissor";
+                Pont = 7010;
             }
             else
             {
                 eredmeny = "Semmi";
+                Pont = 0;
             }
             return eredmeny;
         }
@@ -145,7 +171,5 @@ namespace Kockapóker.sajatOsztalyok
             }
             return tmp;
         }
-
-        public int Pont { get; set; }
     }
 }

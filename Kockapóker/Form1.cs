@@ -35,6 +35,18 @@ namespace Kockapóker
         {
             lblJatekosErtek.Text = $"Első játékos: {j.LeosztasErtek}";
             lblGepErtek.Text = $"Második játékos: {g.LeosztasErtek}";
+            if (j.Pont > g.Pont)
+            {
+                MessageBox.Show("Ember nyert!");
+            }
+            else if (j.Pont < g.Pont)
+            {
+                MessageBox.Show("Gép nyert!");
+            }
+            else
+            {
+                MessageBox.Show("Döntetlen!");
+            }
         }
         private void VezerlokBeallitasa()
         {

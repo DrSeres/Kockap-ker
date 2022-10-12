@@ -13,7 +13,7 @@ namespace Kockapóker.sajatOsztalyok
 
         private string nev;
 
-        public string Nev   
+        public string Nev
         {
             get { return nev; }
             set { nev = value; }
@@ -45,7 +45,7 @@ namespace Kockapóker.sajatOsztalyok
 
         public void ujLeosztas()
         {
-            leosztas.ujLeosztas();  
+            leosztas.ujLeosztas();
         }
 
         public void kepekBeallitasa()
@@ -73,7 +73,7 @@ namespace Kockapóker.sajatOsztalyok
                     case 6:
                         k.Image = Properties.Resources.kek6;
                         break;
-                    
+
                 }
                 //k.Image = kepValaszt();
             }
@@ -81,7 +81,10 @@ namespace Kockapóker.sajatOsztalyok
         public string LeosztasErtek { get {
                 return leosztas.LeosztasErteke();
             } }
-
-
+        public int Pont
+        {
+            get { return leosztas.Pont; }
+        }
+    
     }
 }
