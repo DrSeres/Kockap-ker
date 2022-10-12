@@ -45,6 +45,13 @@ namespace Kockapóker
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblGepErtek = new System.Windows.Forms.Label();
             this.lblJatekosErtek = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblMenetszam = new System.Windows.Forms.Label();
+            this.lblJGyozelem = new System.Windows.Forms.Label();
+            this.lblGGyozelem = new System.Windows.Forms.Label();
+            this.btnUjJatek = new System.Windows.Forms.Button();
+            this.btnKovetkezo = new System.Windows.Forms.Button();
+            this.lblJelzo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbElsoJatekos4)).BeginInit();
@@ -58,11 +65,12 @@ namespace Kockapóker
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnKilepes
             // 
-            this.btnKilepes.Location = new System.Drawing.Point(947, 12);
+            this.btnKilepes.Location = new System.Drawing.Point(902, 12);
             this.btnKilepes.Name = "btnKilepes";
             this.btnKilepes.Size = new System.Drawing.Size(110, 37);
             this.btnKilepes.TabIndex = 0;
@@ -217,14 +225,91 @@ namespace Kockapóker
             this.lblJatekosErtek.TabIndex = 0;
             this.lblJatekosErtek.Text = "label1";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lblGGyozelem);
+            this.groupBox4.Controls.Add(this.lblJGyozelem);
+            this.groupBox4.Controls.Add(this.lblMenetszam);
+            this.groupBox4.Location = new System.Drawing.Point(797, 79);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(215, 147);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Menet Számláló";
+            // 
+            // lblMenetszam
+            // 
+            this.lblMenetszam.AutoSize = true;
+            this.lblMenetszam.Location = new System.Drawing.Point(6, 35);
+            this.lblMenetszam.Name = "lblMenetszam";
+            this.lblMenetszam.Size = new System.Drawing.Size(92, 20);
+            this.lblMenetszam.TabIndex = 0;
+            this.lblMenetszam.Text = "Menetszám";
+            // 
+            // lblJGyozelem
+            // 
+            this.lblJGyozelem.AutoSize = true;
+            this.lblJGyozelem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblJGyozelem.Location = new System.Drawing.Point(6, 67);
+            this.lblJGyozelem.Name = "lblJGyozelem";
+            this.lblJGyozelem.Size = new System.Drawing.Size(72, 19);
+            this.lblJGyozelem.TabIndex = 0;
+            this.lblJGyozelem.Text = "Játékos";
+            // 
+            // lblGGyozelem
+            // 
+            this.lblGGyozelem.AutoSize = true;
+            this.lblGGyozelem.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblGGyozelem.Location = new System.Drawing.Point(6, 103);
+            this.lblGGyozelem.Name = "lblGGyozelem";
+            this.lblGGyozelem.Size = new System.Drawing.Size(36, 19);
+            this.lblGGyozelem.TabIndex = 0;
+            this.lblGGyozelem.Text = "Gép";
+            // 
+            // btnUjJatek
+            // 
+            this.btnUjJatek.Location = new System.Drawing.Point(524, 64);
+            this.btnUjJatek.Name = "btnUjJatek";
+            this.btnUjJatek.Size = new System.Drawing.Size(191, 46);
+            this.btnUjJatek.TabIndex = 4;
+            this.btnUjJatek.Text = "Új játék";
+            this.btnUjJatek.UseVisualStyleBackColor = true;
+            this.btnUjJatek.Click += new System.EventHandler(this.btnUjJatek_Click);
+            // 
+            // btnKovetkezo
+            // 
+            this.btnKovetkezo.Enabled = false;
+            this.btnKovetkezo.Location = new System.Drawing.Point(524, 166);
+            this.btnKovetkezo.Name = "btnKovetkezo";
+            this.btnKovetkezo.Size = new System.Drawing.Size(191, 49);
+            this.btnKovetkezo.TabIndex = 5;
+            this.btnKovetkezo.Text = "Következő menet";
+            this.btnKovetkezo.UseVisualStyleBackColor = true;
+            this.btnKovetkezo.Click += new System.EventHandler(this.btnKovetkezo_Click);
+            // 
+            // lblJelzo
+            // 
+            this.lblJelzo.BackColor = System.Drawing.Color.Gray;
+            this.lblJelzo.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblJelzo.Location = new System.Drawing.Point(547, 367);
+            this.lblJelzo.Name = "lblJelzo";
+            this.lblJelzo.Size = new System.Drawing.Size(465, 216);
+            this.lblJelzo.TabIndex = 6;
+            this.lblJelzo.Text = "label1";
+            this.lblJelzo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kockapóker.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1086, 601);
+            this.ClientSize = new System.Drawing.Size(1035, 601);
             this.ControlBox = false;
+            this.Controls.Add(this.lblJelzo);
+            this.Controls.Add(this.btnKovetkezo);
+            this.Controls.Add(this.btnUjJatek);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -249,6 +334,8 @@ namespace Kockapóker
             ((System.ComponentModel.ISupportInitialize)(this.pbMasodikJatekos1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -271,6 +358,13 @@ namespace Kockapóker
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblGepErtek;
         private System.Windows.Forms.Label lblJatekosErtek;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lblGGyozelem;
+        private System.Windows.Forms.Label lblJGyozelem;
+        private System.Windows.Forms.Label lblMenetszam;
+        private System.Windows.Forms.Button btnUjJatek;
+        private System.Windows.Forms.Button btnKovetkezo;
+        private System.Windows.Forms.Label lblJelzo;
     }
 }
 

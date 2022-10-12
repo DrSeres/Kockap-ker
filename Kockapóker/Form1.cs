@@ -19,15 +19,17 @@ namespace Kockapóker
 
         Jatekos j;
         Gep g;
+
+        private int OsszesMenet { get; set; }
         public Form1()
         {
             InitializeComponent();
             PictureBoxokBeallitasa();
-            JatekosokBeallitasa();
+            //JatekosokBeallitasa();
 
             VezerlokBeallitasa();
 
-            Kiertekeles();
+            //Kiertekeles();
 
         }
 
@@ -37,21 +39,42 @@ namespace Kockapóker
             lblGepErtek.Text = $"Második játékos: {g.LeosztasErtek}";
             if (j.Pont > g.Pont)
             {
-                MessageBox.Show("Ember nyert!");
+                lblJelzo.Text = "Ember nyert!";
+                j.Nyert++;
             }
             else if (j.Pont < g.Pont)
             {
-                MessageBox.Show("Gép nyert!");
+                lblJelzo.Text = "Gép nyert!";
+                g.Nyert++;
             }
             else
             {
-                MessageBox.Show("Döntetlen!");
+                lblJelzo.Text = "Döntetlen!";
+                j.Nyert++;
+                g.Nyert++;
             }
+            OsszesMenet++;
+
+            EredmenyekKiirasa();
         }
+
+        private void EredmenyekKiirasa()
+        {
+            lblMenetszam.Text = $"{OsszesMenet}. menet";
+            lblJGyozelem.Text = $"Játékos győzelem: {j.Nyert}";
+            lblGGyozelem.Text = $"Gép győzelem: {g.Nyert}";
+        }
+
         private void VezerlokBeallitasa()
         {
             lblGepErtek.Text = "";
             lblJatekosErtek.Text = "";
+            lblMenetszam.Text = "";
+            lblJGyozelem.Text = "Játékos: 0";
+            lblGGyozelem.Text = "Gép: 0";
+            lblJelzo.Text = "";
+            
+            OsszesMenet = 0;
         }
 
         private void JatekosokBeallitasa()
@@ -62,6 +85,11 @@ namespace Kockapóker
             //j.LeosztasBeallitasa(kockak);
 
             g = new Gep("Gép", gepKepek);
+
+
+            j.Nyert = 0;
+            g.Nyert = 0;
+
 
             j.kepekBeallitasa();
             g.kepekBeallitasa();
@@ -95,6 +123,24 @@ namespace Kockapóker
             //MessageBox.Show(j.ToString());
             
             Application.Exit();
+        }
+
+        private void btnUjJatek_Click(object sender, EventArgs e)
+        {
+            JatekosokBeallitasa();
+            btnKovetkezo.Enabled = true;
+            VezerlokBeallitasa();
+        }
+
+        private void btnKovetkezo_Click(object sender, EventArgs e)
+        {
+            j.ujLeosztas();
+            g.ujLeosztas();
+
+            j.kepekBeallitasa();
+            g.kepekBeallitasa();
+
+            Kiertekeles();
         }
     }
 }

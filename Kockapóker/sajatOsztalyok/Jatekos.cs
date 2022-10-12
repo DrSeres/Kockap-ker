@@ -19,6 +19,8 @@ namespace Kockapóker.sajatOsztalyok
             set { nev = value; }
         }
 
+        public int Nyert { get; set; }
+
         protected Leosztas leosztas = new Leosztas();
 
         public Leosztas Kockak
@@ -41,6 +43,7 @@ namespace Kockapóker.sajatOsztalyok
         {
             Nev = nev;
             this.kockaKepek = kockaKepek; // akkor kell this ha ugyanaz a 2 név
+            Nyert = 0;
         }
 
         public void ujLeosztas()
